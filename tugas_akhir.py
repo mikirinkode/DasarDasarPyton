@@ -1,6 +1,18 @@
 # Fungsi untuk mencari nilai faktorial dari suatu bilangan
+# Untuk mencari hasilnya digunakan fungsi rekursif
+"""
+contoh 4! = 4 * faktorial(4-1)
+          = 4 * (3 * faktorial(3-1))
+          = 4 * (3 * (2 * faktorial(2-1)))
+          = 4 * (3 * (2 * 1))
+          = 4 * (3 * 2)
+          = 4 * 6
+          = 24
+"""
 def faktorial(bilangan):
-    if (bilangan == 1 or bilangan == 2):
+    if (bilangan == 0):
+        return 1
+    elif (bilangan == 1 or bilangan == 2):
         return bilangan
     else:
         return bilangan*faktorial(bilangan-1)
@@ -14,8 +26,9 @@ def menuFaktorial():
 # fungsi untuk mencari faktor bilangan
 def faktorBilangan(bilangan):
     result = []
-
-    for x in range(1, bilangan+1):
+    for x in range(1, bilangan + 1):
+        # jika bilangan dibagi dengan x dan menghasilkan sisa bagi == 0,
+        # maka x merupakan faktor dari bilangan dan tambahkan x ke dalam list
         if (bilangan %x == 0):
             result.append(x)
 
@@ -24,7 +37,6 @@ def faktorBilangan(bilangan):
 def menuFaktorBilangan():
     print("\n#2 Mencari nilai Faktor Bilangan")
     bilangan = int(input("Masukkan bilangan = "))
-
     print("Faktor Bilangan " + str(bilangan) + " adalah " + str(faktorBilangan(bilangan)))
         
 
